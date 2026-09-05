@@ -1,0 +1,1 @@
+Aayush New local assets. Property photography should be stored here rather than hotlinked in production.
