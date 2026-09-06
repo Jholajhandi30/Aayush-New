@@ -28,10 +28,30 @@
       <image:caption>Verified Palace de Shaan property imagery for visual recce planning.</image:caption>
     </image:image>
   </url>
-  <url><loc>https://aayushresort.com/rooms.html</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aayushresort.com/weddings.html</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://aayushresort.com/shoots.html</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://aayushresort.com/rooms.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://aayushresort.com/weddings.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://aayushresort.com/images/palace/ABP_0659_optimized_900.jpg</image:loc>
+      <image:title>Palace de Shaan wedding venue at Aayush Resort</image:title>
+      <image:caption>Verified Palace de Shaan exterior representing the Aayush Resort wedding venue.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aayushresort.com/shoots.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://aayushresort.com/images/palace/ABP_0659_optimized_900.jpg</image:loc>
+      <image:title>Palace de Shaan shooting location at Aayush Resort</image:title>
+      <image:caption>Verified Palace de Shaan exterior for film, OTT, TV and commercial shoot enquiries.</image:caption>
+    </image:image>
+  </url>
   <url><loc>https://aayushresort.com/corporate.html</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aayushresort.com/day-outing.html</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aayushresort.com/enquire.html</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aayushresort.com/day-outing.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aayushresort.com/enquire.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
