@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    { "source": "/palace", "destination": "/palace.html", "permanent": true },
+    { "source": "/visual-recce", "destination": "/palace.html", "permanent": true },
+    { "source": "/rooms", "destination": "/rooms.html", "permanent": true },
+    { "source": "/weddings", "destination": "/weddings.html", "permanent": true },
+    { "source": "/shoots", "destination": "/shoots.html", "permanent": true },
+    { "source": "/corporate", "destination": "/corporate.html", "permanent": true },
+    { "source": "/day-outing", "destination": "/day-outing.html", "permanent": true },
+    { "source": "/activities", "destination": "/day-outing.html", "permanent": true },
+    { "source": "/enquiry", "destination": "/enquire.html", "permanent": true },
+    { "source": "/contact", "destination": "/enquire.html", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
