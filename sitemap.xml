@@ -51,7 +51,17 @@
       <image:caption>Verified Palace de Shaan exterior for film, OTT, TV and commercial shoot enquiries.</image:caption>
     </image:image>
   </url>
-  <url><loc>https://aayushresort.com/corporate.html</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://aayushresort.com/corporate.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aayushresort.com/wp-content/uploads/2026/01/Aayush-Corporate-1.webp</image:loc>
+      <image:title>Corporate offsite at Aayush Resort Panvel</image:title>
+      <image:caption>Verified Aayush Resort imagery for corporate offsites, conferences and team programmes.</image:caption>
+    </image:image>
+  </url>
   <url><loc>https://aayushresort.com/day-outing.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://aayushresort.com/enquire.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
