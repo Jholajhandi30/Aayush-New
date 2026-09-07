@@ -2,57 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://aayushresort.com/</loc>
+    <loc>https://aayushmaster.vercel.app/</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://aayushresort.com/palace.html</loc>
+    <loc>https://aayushmaster.vercel.app/palace.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://aayushresort.com/images/palace/ABP_0659_optimized_900.jpg</image:loc>
+      <image:loc>https://aayushmaster.vercel.app/images/palace/ABP_0659_optimized_900.jpg</image:loc>
       <image:title>Palace de Shaan exterior at Aayush Resort</image:title>
       <image:caption>Verified Palace de Shaan exterior used for the Aayush Resort visual recce.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://aayushresort.com/images/palace/ABP_0660_optimized_900.jpg</image:loc>
+      <image:loc>https://aayushmaster.vercel.app/images/palace/ABP_0660_optimized_900.jpg</image:loc>
       <image:title>Palace de Shaan visual recce</image:title>
       <image:caption>Verified Aayush Resort Palace de Shaan property imagery.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://aayushresort.com/images/palace/ABP_0665_optimized_900.jpg</image:loc>
+      <image:loc>https://aayushmaster.vercel.app/images/palace/ABP_0665_optimized_900.jpg</image:loc>
       <image:title>Palace de Shaan at Aayush Resort Panvel</image:title>
       <image:caption>Verified Palace de Shaan property imagery for visual recce planning.</image:caption>
     </image:image>
   </url>
-  <url><loc>https://aayushresort.com/rooms.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aayushmaster.vercel.app/rooms.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url>
-    <loc>https://aayushresort.com/weddings.html</loc>
+    <loc>https://aayushmaster.vercel.app/weddings.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://aayushresort.com/images/palace/ABP_0659_optimized_900.jpg</image:loc>
+      <image:loc>https://aayushmaster.vercel.app/images/palace/ABP_0659_optimized_900.jpg</image:loc>
       <image:title>Palace de Shaan wedding venue at Aayush Resort</image:title>
       <image:caption>Verified Palace de Shaan exterior representing the Aayush Resort wedding venue.</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://aayushresort.com/shoots.html</loc>
+    <loc>https://aayushmaster.vercel.app/shoots.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://aayushresort.com/images/palace/ABP_0659_optimized_900.jpg</image:loc>
+      <image:loc>https://aayushmaster.vercel.app/images/palace/ABP_0659_optimized_900.jpg</image:loc>
       <image:title>Palace de Shaan shooting location at Aayush Resort</image:title>
       <image:caption>Verified Palace de Shaan exterior for film, OTT, TV and commercial shoot enquiries.</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://aayushresort.com/corporate.html</loc>
+    <loc>https://aayushmaster.vercel.app/corporate.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -62,6 +62,6 @@
       <image:caption>Verified Aayush Resort imagery for corporate offsites, conferences and team programmes.</image:caption>
     </image:image>
   </url>
-  <url><loc>https://aayushresort.com/day-outing.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aayushresort.com/enquire.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aayushmaster.vercel.app/day-outing.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aayushmaster.vercel.app/enquire.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
