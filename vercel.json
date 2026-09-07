@@ -1,15 +1,24 @@
 {
   "redirects": [
     { "source": "/palace", "destination": "/palace.html", "permanent": true },
+    { "source": "/palace-de-shaan", "destination": "/palace.html", "permanent": true },
     { "source": "/visual-recce", "destination": "/palace.html", "permanent": true },
+    { "source": "/visualrecce", "destination": "/palace.html", "permanent": true },
     { "source": "/rooms", "destination": "/rooms.html", "permanent": true },
+    { "source": "/stay", "destination": "/rooms.html", "permanent": true },
+    { "source": "/accommodation", "destination": "/rooms.html", "permanent": true },
     { "source": "/weddings", "destination": "/weddings.html", "permanent": true },
+    { "source": "/wedding", "destination": "/weddings.html", "permanent": true },
     { "source": "/shoots", "destination": "/shoots.html", "permanent": true },
+    { "source": "/shooting-location", "destination": "/shoots.html", "permanent": true },
+    { "source": "/film-shoots", "destination": "/shoots.html", "permanent": true },
     { "source": "/corporate", "destination": "/corporate.html", "permanent": true },
     { "source": "/day-outing", "destination": "/day-outing.html", "permanent": true },
+    { "source": "/dayouting", "destination": "/day-outing.html", "permanent": true },
     { "source": "/activities", "destination": "/day-outing.html", "permanent": true },
     { "source": "/enquiry", "destination": "/enquire.html", "permanent": true },
-    { "source": "/contact", "destination": "/enquire.html", "permanent": true }
+    { "source": "/contact", "destination": "/enquire.html", "permanent": true },
+    { "source": "/contact-us", "destination": "/enquire.html", "permanent": true }
   ],
   "headers": [
     {
