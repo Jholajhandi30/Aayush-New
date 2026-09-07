@@ -62,6 +62,21 @@
       <image:caption>Verified Aayush Resort imagery for corporate offsites, conferences and team programmes.</image:caption>
     </image:image>
   </url>
-  <url><loc>https://aayushmaster.vercel.app/day-outing.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://aayushmaster.vercel.app/day-outing.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aayushmaster.vercel.app/images/palace/ABP_0660_optimized_900.jpg</image:loc>
+      <image:title>Palace de Shaan at Aayush Resort Day Outing</image:title>
+      <image:caption>Verified Palace de Shaan photograph used in the Day Outing page's interactive Palace activities.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aayushmaster.vercel.app/images/palace/ABP_9324-Pano_-_Copy_2_optimized_900.jpg</image:loc>
+      <image:title>Palace de Shaan interior at Aayush Resort</image:title>
+      <image:caption>Verified Palace de Shaan interior photograph used in the Day Outing Palace memory and visual quiz experience.</image:caption>
+    </image:image>
+  </url>
   <url><loc>https://aayushmaster.vercel.app/enquire.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
