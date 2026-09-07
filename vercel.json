@@ -52,6 +52,12 @@
       ]
     },
     {
+      "source": "/day-outing.html",
+      "headers": [
+        { "key": "Link", "value": "<https://aayushmaster.vercel.app/day-outing.html>; rel=canonical" }
+      ]
+    },
+    {
       "source": "/images/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=604800, s-maxage=2592000, stale-while-revalidate=86400" }
