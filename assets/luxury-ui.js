@@ -5,6 +5,24 @@
   document.body.classList.add('lux-page-enter');
   requestAnimationFrame(()=>document.body.classList.add('lux-loaded'));
 
+  const main=document.querySelector('main');
+  if(main){
+    if(!main.id)main.id='main-content';
+    if(!document.querySelector('.lux-skip-link')){
+      const skip=document.createElement('a');
+      skip.className='lux-skip-link';
+      skip.href='#'+main.id;
+      skip.textContent='Skip to main content';
+      document.body.prepend(skip);
+      if(!document.getElementById('lux-skip-style')){
+        const style=document.createElement('style');
+        style.id='lux-skip-style';
+        style.textContent='.lux-skip-link{position:fixed;z-index:9999;left:16px;top:12px;transform:translateY(-160%);padding:10px 14px;border:1px solid #d8b27488;border-radius:999px;background:#0b0907;color:#f3d49b;font:600 13px/1.2 system-ui,sans-serif;letter-spacing:.04em;text-decoration:none;box-shadow:0 12px 34px #0008;transition:transform .18s ease}.lux-skip-link:focus{transform:translateY(0);outline:2px solid #f3d49b;outline-offset:3px}@media(prefers-reduced-motion:reduce){.lux-skip-link{transition:none}}';
+        document.head.appendChild(style);
+      }
+    }
+  }
+
   const path=(location.pathname.split('/').pop()||'index.html').toLowerCase();
   document.querySelectorAll('nav a[href],.nav a[href],.top a[href]').forEach(a=>{
     const raw=(a.getAttribute('href')||'').split('?')[0].split('#')[0];
