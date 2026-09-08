@@ -65,7 +65,8 @@
   });
 
   let menuButton=document.querySelector('#menu,.menu,[data-menu-toggle]');
-  const menuPanel=document.querySelector('#navlinks,.navlinks,[data-menu-panel]');
+  let menuPanel=document.querySelector('#navlinks,.navlinks,[data-menu-panel]');
+  if(!menuPanel&&!menuButton)menuPanel=document.querySelector('nav .links,.nav .links,.top .links');
   let syntheticMenu=false;
 
   if(!menuButton&&menuPanel){
