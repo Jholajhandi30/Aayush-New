@@ -103,9 +103,14 @@
   </url>
   <url>
     <loc>https://www.aayushresort.com/shoots-done.html</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.aayushresort.com/images/palace/ABP_0659_optimized_900.jpg</image:loc>
+      <image:title>Palace de Shaan production location at Aayush Resort</image:title>
+      <image:caption>Verified Palace de Shaan exterior representing Aayush Resort's production and shoot archive.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.aayushresort.com/corporate.html</loc>
