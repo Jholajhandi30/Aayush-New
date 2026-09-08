@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#173925">
+<title>Aayush Navigator — Route Recorder</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f1e8;color:#172019;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}.app{max-width:760px;margin:auto;padding:14px 14px 70px}.top{display:flex;align-items:center;justify-content:space-between;gap:10px}.top h1{font-size:20px;margin:0}.top p{font-size:12px;color:#69736b;margin:3px 0 0}.btn{border:0;border-radius:12px;padding:11px 13px;font-weight:800}.primary{background:#173925;color:#fff}.secondary{background:#eef1ec;color:#172019}.danger{background:#f5e9e6;color:#8c3829}.card{background:#fff;border:1px solid #e1e3dd;border-radius:18px;box-shadow:0 8px 28px #16321e0d;margin-top:12px;padding:13px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.stat{background:#f4f6f2;border-radius:12px;padding:10px}.stat b{font-size:12px;display:block}.stat span{font-size:12px;color:#667067}.field{margin-top:10px}.field label{display:block;font-size:12px;font-weight:800;margin-bottom:5px}.field input,.field select{width:100%;padding:11px 12px;border:1px solid #dce0da;border-radius:11px;background:#fff;font:inherit}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}.row button{flex:1;min-width:120px}.quality{margin-top:10px;padding:9px 10px;border-radius:10px;background:#f5f6f3;font-size:12px;color:#6a726c}.good{color:#27663a}.warn{color:#8a651c}.route{border:1px solid #e4e6e1;border-radius:12px;padding:10px;margin-top:8px}.route b{font-size:13px}.route small{display:block;color:#6c756e;margin-top:3px;line-height:1.4}.route button{margin-top:7px;border:0;border-radius:9px;padding:7px 9px;background:#f3ece9;color:#8d382b;font-weight:800}pre{white-space:pre-wrap;word-break:break-word;background:#f5f6f3;border-radius:12px;padding:10px;max-height:220px;overflow:auto;font-size:10px}.hint{font-size:12px;color:#69736b;line-height:1.45}.footer{font-size:11px;color:#737c74;margin-top:12px}@media(max-width:520px){.grid{grid-template-columns:1fr 1fr}.top{align-items:flex-start}.top .btn{padding:9px 10px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top"><div><h1>Aayush Route Recorder</h1><p>Staff tool — walk real resort paths and capture routing data</p></div><button class="btn primary" id="gpsBtn">📍 Start GPS</button></div>
+
+  <section class="card">
+    <div class="grid">
+      <div class="stat"><b>GPS</b><span id="gpsStatus">Not started</span></div>
+      <div class="stat"><b>Accuracy</b><span id="gpsAcc">—</span></div>
+      <div class="stat"><b>Recording</b><span id="recStatus">Stopped</span></div>
+      <div class="stat"><b>Points</b><span id="pointCount">0</span></div>
+    </div>
+    <div class="quality" id="quality">For useful walking routes, wait for GPS accuracy below 15 m before starting. Under 8 m is better.</div>
+  </section>
+
+  <section class="card">
+    <b>Record a walking segment</b>
+    <div class="hint">Choose where you are walking from and to. Walk the normal guest route. The tool records a breadcrumb only when you have moved enough, reducing noisy duplicate GPS points.</div>
+    <div class="field"><label for="from">From</label><select id="from"></select></div>
+    <div class="field"><label for="to">To</label><select id="to"></select></div>
+    <div class="field"><label for="note">Route note (optional)</label><input id="note" placeholder="e.g. Use left path after fountain; buggy-friendly"></div>
+    <div class="row"><button class="btn primary" id="start">▶ Start recording</button><button class="btn secondary" id="stop" disabled>■ Stop & save</button></div>
+  </section>
+
+  <section class="card">
+    <b>Saved route segments</b>
+    <div id="routes"></div>
+    <div class="row"><button class="btn primary" id="copy">Copy GeoJSON</button><button class="btn secondary" id="download">Download GeoJSON</button><button class="btn danger" id="reset">Reset all</button></div>
+    <pre id="out">No routes yet.</pre>
+  </section>
+  <div class="footer">Route data stays on this phone until exported. This page does not alter the guest navigator automatically.</div>
+</div>
+<script>
+const PLACES=['Main Entrance','Reception','Aayush Palace','Peacock Room','Suhanav Lawn','Swimming Pool','Manvar Hall / 500 Rooms','Dhaba / SB-1','N Room Block','E Room Block','Cottage Cluster — Suhanav side','Cottage Cluster — Pool side','Treetop Cottages'];
+const KEY='aayushRouteSegmentsV1';
+const $=s=>document.querySelector(s);let watchId=null,current=null,recording=false,currentPoints=[],startedAt=0,lastAccepted=null;
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch{return[]}}
+function save(v){localStorage.setItem(KEY,JSON.stringify(v));render()}
+function distance(a,b){if(!a||!b)return Infinity;const R=6371000,p1=a.lat*Math.PI/180,p2=b.lat*Math.PI/180,dp=(b.lat-a.lat)*Math.PI/180,dl=(b.lng-a.lng)*Math.PI/180,x=Math.sin(dp/2)**2+Math.cos(p1)*Math.cos(p2)*Math.sin(dl/2)**2;return 2*R*Math.atan2(Math.sqrt(x),Math.sqrt(1-x))}
+function routeDistance(points){let d=0;for(let i=1;i<points.length;i++)d+=distance(points[i-1],points[i]);return d}
+function geojson(){return{type:'FeatureCollection',generator:'Aayush Navigator Route Recorder',features:load().map(r=>({type:'Feature',properties:{id:r.id,from:r.from,to:r.to,note:r.note,startedAt:r.startedAt,endedAt:r.endedAt,durationSeconds:r.durationSeconds,distanceMeters:r.distanceMeters,averageAccuracy:r.averageAccuracy},geometry:{type:'LineString',coordinates:r.points.map(p=>[p.lng,p.lat])}}))}}
+function render(){const a=load();$('#routes').innerHTML=a.length?a.map((r,i)=>`<div class="route"><b>${esc(r.from)} → ${esc(r.to)}</b><small>${r.points.length} GPS points · ${Math.round(r.distanceMeters)} m · ${Math.round(r.durationSeconds/60)} min · avg ±${Math.round(r.averageAccuracy)} m${r.note?' · '+esc(r.note):''}</small><button data-i="${i}">Delete</button></div>`).join(''):'<div class="hint" style="margin-top:8px">No saved route segments yet.</div>';$('#routes').querySelectorAll('button').forEach(b=>b.onclick=()=>{let z=load();z.splice(+b.dataset.i,1);save(z)});$('#out').textContent=a.length?JSON.stringify(geojson(),null,2):'No routes yet.'}
+function startGps(){if(!navigator.geolocation){$('#gpsStatus').textContent='Unsupported';return}if(watchId!==null)return;$('#gpsStatus').textContent='Starting…';watchId=navigator.geolocation.watchPosition(p=>{current={lat:p.coords.latitude,lng:p.coords.longitude,accuracy:p.coords.accuracy,time:Date.now()};$('#gpsStatus').textContent='Live';$('#gpsAcc').textContent='±'+Math.round(current.accuracy)+' m';$('#gpsBtn').textContent='✓ GPS live';let q=$('#quality');q.className='quality '+(current.accuracy<=12?'good':'warn');q.textContent=current.accuracy<=12?'GPS quality is good enough to record a walking route.':'GPS is currently ±'+Math.round(current.accuracy)+' m. Wait for better accuracy if possible.';if(recording&&current.accuracy<=25){let moved=distance(lastAccepted,current);if(!lastAccepted||moved>=4||Date.now()-lastAccepted.time>=10000){currentPoints.push(current);lastAccepted=current;$('#pointCount').textContent=currentPoints.length}}},e=>{$('#gpsStatus').textContent=e.message},{enableHighAccuracy:true,maximumAge:500,timeout:12000})}
+$('#gpsBtn').onclick=startGps;
+function fillPlaces(){for(const id of ['from','to']){$('#'+id).innerHTML=PLACES.map(p=>`<option>${p}</option>`).join('')}$('#to').selectedIndex=1}
+$('#start').onclick=()=>{if(recording)return;if(!current){startGps();alert('GPS is starting. Wait for a live accuracy reading, then tap Start recording again.');return}if(current.accuracy>25&&!confirm('GPS accuracy is currently ±'+Math.round(current.accuracy)+' m. Record anyway?'))return;recording=true;currentPoints=[current];lastAccepted=current;startedAt=Date.now();$('#recStatus').textContent='Recording';$('#pointCount').textContent='1';$('#start').disabled=true;$('#stop').disabled=false;$('#gpsBtn').textContent='✓ GPS live'};
+$('#stop').onclick=()=>{if(!recording)return;recording=false;$('#recStatus').textContent='Stopped';$('#start').disabled=false;$('#stop').disabled=true;if(currentPoints.length<2){alert('Not enough movement was captured. Walk farther and try again.');currentPoints=[];$('#pointCount').textContent='0';return}let end=Date.now(),a=load(),avg=currentPoints.reduce((n,p)=>n+p.accuracy,0)/currentPoints.length;a.push({id:'route-'+end,from:$('#from').value,to:$('#to').value,note:$('#note').value.trim(),startedAt:new Date(startedAt).toISOString(),endedAt:new Date(end).toISOString(),durationSeconds:+((end-startedAt)/1000).toFixed(1),distanceMeters:+routeDistance(currentPoints).toFixed(1),averageAccuracy:+avg.toFixed(1),points:currentPoints.map(p=>({lat:+p.lat.toFixed(7),lng:+p.lng.toFixed(7),accuracy:Math.round(p.accuracy),time:new Date(p.time).toISOString()}))});save(a);currentPoints=[];lastAccepted=null;$('#pointCount').textContent='0';$('#note').value=''};
+$('#copy').onclick=async()=>{let t=JSON.stringify(geojson(),null,2);try{await navigator.clipboard.writeText(t);$('#out').textContent=t+'\n\nCopied.'}catch{$('#out').textContent=t}};
+$('#download').onclick=()=>{let blob=new Blob([JSON.stringify(geojson(),null,2)],{type:'application/geo+json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='aayush-walking-routes.geojson';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500)};
+$('#reset').onclick=()=>{if(recording)return alert('Stop the current recording first.');if(confirm('Delete all saved route segments on this device?')){localStorage.removeItem(KEY);render()}};
+fillPlaces();render();
+</script>
+</body>
+</html>
