@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aayushmaster.vercel.app/sitemap.xml
+Sitemap: https://www.aayushresort.com/sitemap.xml
