@@ -60,56 +60,7 @@
     {
       "source": "/",
       "headers": [
-        { "key": "Link", "value": "<https://aayushmaster.vercel.app/>; rel=canonical" },
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/palace.html",
-      "headers": [
-        { "key": "Link", "value": "<https://aayushmaster.vercel.app/palace.html>; rel=canonical" }
-      ]
-    },
-    {
-      "source": "/rooms.html",
-      "headers": [
-        { "key": "Link", "value": "<https://aayushmaster.vercel.app/rooms.html>; rel=canonical" }
-      ]
-    },
-    {
-      "source": "/weddings.html",
-      "headers": [
-        { "key": "Link", "value": "<https://aayushmaster.vercel.app/weddings.html>; rel=canonical" }
-      ]
-    },
-    {
-      "source": "/shoots.html",
-      "headers": [
-        { "key": "Link", "value": "<https://aayushmaster.vercel.app/shoots.html>; rel=canonical" }
-      ]
-    },
-    {
-      "source": "/shoots-done.html",
-      "headers": [
-        { "key": "Link", "value": "<https://aayushmaster.vercel.app/shoots-done.html>; rel=canonical" }
-      ]
-    },
-    {
-      "source": "/corporate.html",
-      "headers": [
-        { "key": "Link", "value": "<https://aayushmaster.vercel.app/corporate.html>; rel=canonical" }
-      ]
-    },
-    {
-      "source": "/day-outing.html",
-      "headers": [
-        { "key": "Link", "value": "<https://aayushmaster.vercel.app/day-outing.html>; rel=canonical" }
-      ]
-    },
-    {
-      "source": "/enquire.html",
-      "headers": [
-        { "key": "Link", "value": "<https://aayushmaster.vercel.app/enquire.html>; rel=canonical" }
       ]
     },
     {
