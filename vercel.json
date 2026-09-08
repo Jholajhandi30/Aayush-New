@@ -3,6 +3,8 @@
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/index", "destination": "/", "permanent": true },
     { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/our-story", "destination": "/", "permanent": true },
+    { "source": "/our-story/", "destination": "/", "permanent": true },
     { "source": "/palace", "destination": "/palace.html", "permanent": true },
     { "source": "/palace/", "destination": "/palace.html", "permanent": true },
     { "source": "/palace-de-shaan", "destination": "/palace.html", "permanent": true },
