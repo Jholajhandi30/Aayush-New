@@ -50,6 +50,8 @@
     { "source": "/corporate/", "destination": "/corporate.html", "permanent": true },
     { "source": "/corporate-event-venue-karjat", "destination": "/corporate.html", "permanent": true },
     { "source": "/corporate-event-venue-karjat/", "destination": "/corporate.html", "permanent": true },
+    { "source": "/corporate-outing-near-mumbai-2026", "destination": "/corporate.html", "permanent": true },
+    { "source": "/corporate-outing-near-mumbai-2026/", "destination": "/corporate.html", "permanent": true },
     { "source": "/day-outing", "destination": "/day-outing.html", "permanent": true },
     { "source": "/day-outing/", "destination": "/day-outing.html", "permanent": true },
     { "source": "/dayouting", "destination": "/day-outing.html", "permanent": true },
