@@ -124,5 +124,15 @@
       <image:caption>Verified Palace de Shaan interior photograph used in the Day Outing Palace memory and visual quiz experience.</image:caption>
     </image:image>
   </url>
-  <url><loc>https://www.aayushresort.com/enquire.html</loc><lastmod>2026-09-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.aayushresort.com/enquire.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.aayushresort.com/images/palace/ABP_0659_optimized_900.jpg</image:loc>
+      <image:title>Palace de Shaan enquiry at Aayush Resort</image:title>
+      <image:caption>Verified Palace de Shaan exterior representing the Aayush Resort enquiry and contact experience.</image:caption>
+    </image:image>
+  </url>
 </urlset>
