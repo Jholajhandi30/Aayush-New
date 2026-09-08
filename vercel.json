@@ -74,6 +74,8 @@
     { "source": "/one-day-picnic/", "destination": "/day-outing.html", "permanent": true },
     { "source": "/one-day-picnic-resort-in-karjat", "destination": "/day-outing.html", "permanent": true },
     { "source": "/one-day-picnic-resort-in-karjat/", "destination": "/day-outing.html", "permanent": true },
+    { "source": "/amusement-park-and-resort-in-panvel", "destination": "/day-outing.html", "permanent": true },
+    { "source": "/amusement-park-and-resort-in-panvel/", "destination": "/day-outing.html", "permanent": true },
     { "source": "/picnic", "destination": "/day-outing.html", "permanent": true },
     { "source": "/picnic/", "destination": "/day-outing.html", "permanent": true },
     { "source": "/activities", "destination": "/day-outing.html", "permanent": true },
