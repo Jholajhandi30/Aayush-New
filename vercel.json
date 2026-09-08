@@ -36,6 +36,8 @@
     { "source": "/premium-cottage-rooms/", "destination": "/rooms.html", "permanent": true },
     { "source": "/treetop", "destination": "/rooms.html", "permanent": true },
     { "source": "/treetop/", "destination": "/rooms.html", "permanent": true },
+    { "source": "/family-cottage", "destination": "/rooms.html", "permanent": true },
+    { "source": "/family-cottage/", "destination": "/rooms.html", "permanent": true },
     { "source": "/delux-cottage", "destination": "/rooms.html", "permanent": true },
     { "source": "/delux-cottage/", "destination": "/rooms.html", "permanent": true },
     { "source": "/rpsuitsrooms", "destination": "/rooms.html", "permanent": true },
