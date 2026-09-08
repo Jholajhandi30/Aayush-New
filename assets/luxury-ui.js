@@ -8,11 +8,13 @@
   const main=document.querySelector('main');
   if(main){
     if(!main.id)main.id='main-content';
+    if(!main.hasAttribute('tabindex'))main.setAttribute('tabindex','-1');
     if(!document.querySelector('.lux-skip-link')){
       const skip=document.createElement('a');
       skip.className='lux-skip-link';
       skip.href='#'+main.id;
       skip.textContent='Skip to main content';
+      skip.addEventListener('click',()=>requestAnimationFrame(()=>main.focus({preventScroll:true})));
       document.body.prepend(skip);
       if(!document.getElementById('lux-skip-style')){
         const style=document.createElement('style');
@@ -173,6 +175,19 @@
       const first=focusable[0],last=focusable[focusable.length-1];
       if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
       else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+    });
+    window.addEventListener('pagehide',()=>{
+      unlockBody();
+      menuOpen=false;
+    });
+    window.addEventListener('pageshow',()=>{
+      if(syntheticMenu)menuPanel.classList.remove('open');
+      menuPanel.classList.remove('active');
+      menuPanel.removeAttribute('data-open');
+      wasOpen=false;
+      menuOpen=false;
+      unlockBody();
+      syncMenu();
     });
     syncMenu();
   }
