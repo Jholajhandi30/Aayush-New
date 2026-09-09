@@ -59,7 +59,7 @@ $('#undo').onclick=()=>{let a=load();a.pop();save(a)};
 $('#reset').onclick=()=>{if(confirm('Delete all saved calibration anchors on this device?')){localStorage.removeItem(KEY);render([])}};
 $('#copy').onclick=async()=>{let t=JSON.stringify(load(),null,2);try{await navigator.clipboard.writeText(t);$('#out').textContent=t+'\n\nCopied.'}catch{$('#out').textContent=t}};
 $('#download').onclick=()=>{let blob=new Blob([JSON.stringify(load(),null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='aayush-gps-calibration.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500)};
-render();syncGpsGate();window.addEventListener('pageshow',()=>{syncGpsGate();quality(load())});
+render();syncGpsGate();window.addEventListener('pageshow',()=>{syncGpsGate();quality(load())});setInterval(()=>{syncGpsGate();quality(load())},15000);
 </script>
 </body>
 </html>
